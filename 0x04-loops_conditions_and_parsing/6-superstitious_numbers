@@ -1,24 +1,19 @@
-!/usr/bin/env bash
-# This script displays number from 1-20 and:
-# displays 4 and then bad luck from China for the 4th loop rep
-# displays 9 and then bad luck from Japan for the 9th loop rep
-# displays 17 and then bad luck from Italy for the 17th loop rep
+#!/usr/bin/env bash
+# Display numbers 1-20 or bad luck
 
-number=1
-
-while [ "$number" -le "20" ]
+i=0
+while ((i++ < 20))
 do
-    echo "$number"
-    case $number in
-        "4" )
-            echo "bad luck from China" ;;
-        "9" )
-            echo "bad luck from Japan" ;;
-        "17" )
-            echo "bad luck from Italy" ;;
-        * )
-            ;;
-    esac
-
-    number=$(( number + 1 ))
+	echo $i
+	case $i in
+		4)
+			echo "bad luck from China"
+			;;
+		9)
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "bad luck from Italy"
+			;;
+	esac
 done
