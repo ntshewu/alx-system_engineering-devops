@@ -1,4 +1,10 @@
-#!/usr/bin/env bash
-# Run Apache on the holbertonschool/265-0 docker container
-echo "ServerName localhost" >> /etc/apache2.conf
-service apache2 start
+# Creates  file in /tmp
+
+file { 'school':
+  ensure  => 'present',
+  content => 'I love Puppet',
+  group   => 'www-data',
+  mode    => '0744',
+  owner   => 'www-data',
+  path    => '/tmp/school',
+}
